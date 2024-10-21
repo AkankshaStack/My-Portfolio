@@ -84,7 +84,7 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="md:hidden text-white">
+       <button id="menu-btnmob" class="md:hidden text-white">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
@@ -92,15 +92,15 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="menu" class="hidden md:hidden">
-      <a href="#home" class="block text-gray-300 hover:text-white py-2">Home</a>
+    <div id="menumob" class="hidden md:hidden">
+      <a href="#home" class="block text-gray-300 hover:text-white py-2 mobile-link">Home</a>
 
-      <a href="#skills" class="block text-gray-300 hover:text-white py-2">Skills</a>
+      <a href="#skills" class="block text-gray-300 hover:text-white py-2 mobile-link">Skills</a>
 
-      <a href="#experience" class="block text-gray-300 hover:text-white py-2">Experience</a>
-      <a href="#education" class="block text-gray-300 hover:text-white py-2">Education</a>
-      <a href="#projects" class="block text-gray-300 hover:text-white py-2">Projects</a>
-      <a href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
+      <a href="#experience" class="block text-gray-300 hover:text-white py-2 mobile-link">Experience</a>
+      <a href="#education" class="block text-gray-300 hover:text-white py-2 mobile-link">Education</a>
+      <a href="#projects" class="block text-gray-300 hover:text-white py-2 mobile-link">Projects</a>
+      <a href="#contact" class="block text-gray-300 hover:text-white py-2 mobile-link">Contact</a>
     </div>
   </nav>
 
@@ -520,10 +520,24 @@
     });
 
   </script>
+<!-- Mobile menu toggle -->
+ <script>
+    const menuBtnmob = document.getElementById('menu-btnmob');
+    const menumob = document.getElementById('menumob');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
 
+    menuBtnmob.addEventListener('click', () => {
+      menumob.classList.toggle('hidden');
+    });
 
 
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menumob.classList.add('hidden');
+      });
+    });
+  </script>
 </body>
 
 </html>
